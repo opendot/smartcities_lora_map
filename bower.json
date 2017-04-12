@@ -13,6 +13,7 @@
   ],
   "dependencies": {
     "angular": "^1.6.4",
-    "mapbox-gl": "^1.0.3"
+    "mapbox-gl": "^1.0.3",
+    "gimite/web-socket-js": "web-socket-js#^1.0.2"
   }
 }
