@@ -1,18 +1,55 @@
-/**
- * Created by Cento on 12/04/2017.
- */
-// Let the library know where WebSocketMain.swf is:
-WEB_SOCKET_SWF_LOCATION = "/bower_components/gimite/we-socket-js/WebSocketMain.swf";
+var wsUri = "ws://echo.websocket.org/";
+var output;
 
-// Write your code in the same way as for native WebSocket:
-var ws = new WebSocket("ws://example.com:10081/");
-ws.onopen = function() {
-    ws.send("Hello");  // Sends a message.
-};
-ws.onmessage = function(e) {
-    // Receives a message.
-    alert(e.data);
-};
-ws.onclose = function() {
-    alert("closed");
-};
+function init()
+{
+    output = document.getElementById("output");
+    testWebSocket();
+}
+
+function testWebSocket()
+{
+    websocket = new WebSocket(wsUri);
+    websocket.onopen = function(evt) { onOpen(evt) };
+    websocket.onclose = function(evt) { onClose(evt) };
+    websocket.onmessage = function(evt) { onMessage(evt) };
+    websocket.onerror = function(evt) { onError(evt) };
+}
+
+function onOpen(evt)
+{
+    writeToScreen("CONNECTED");
+    doSend("WebSocket rocks");
+}
+
+function onClose(evt)
+{
+    writeToScreen("DISCONNECTED");
+}
+
+function onMessage(evt)
+{
+    writeToScreen('<span style="color: blue;">RESPONSE: ' + evt.data+'</span>');
+    //websocket.close();
+}
+
+function onError(evt)
+{
+    writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
+}
+
+function doSend(message)
+{
+    writeToScreen("SENT: " + message);
+    websocket.send(message);
+}
+
+function writeToScreen(message)
+{
+    var pre = document.createElement("p");
+    pre.style.wordWrap = "break-word";
+    pre.innerHTML = message;
+    output.appendChild(pre);
+}
+
+window.addEventListener("load", init, false);
