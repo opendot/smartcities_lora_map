@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "json2csv": "^3.7.3",
     "mongodb": "^2.2.25"
   }
 }

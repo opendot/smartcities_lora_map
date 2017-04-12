@@ -1,0 +1,838 @@
+/* 1 */
+{
+    "_id": ObjectId("58a2e1421bbe3926f82e1f26"),
+    "sens_accx": "0",
+    "sens_accy": "109.5",
+    "sens_accz": "0",
+    "Timestamp": "14-02-2017 11:51:46",
+    "sens_vbattery": "0.05",
+    "Duplicato": false,
+    "sens_longitude": 10.21537,
+    "Frequency": 868.5,
+    "sens_latitude": 45.51979,
+    "Spreading_Factor": 7,
+    "Dev_EUI": "001bc50670101631",
+    "RSSI": -89,
+    "Channel": 2
+}
+
+/* 2 */
+{
+    "_id": ObjectId("58a2e1e41bbe3922acd6dedd"),
+    "Dev_EUI": "0018b20000000c26",
+    "Timestamp": "14-02-2017 11:54:28"
+}
+
+/* 3 */
+{
+    "_id": ObjectId("58a2e1e81bbe3922acd6dede"),
+    "Dev_EUI": "0018b20000000c26",
+    "Timestamp": "14-02-2017 11:54:32",
+    "GW": [
+        {
+            "rssi": -255,
+            "mac": "001bc50670200001",
+            "snr": 8.5
+        },
+        {
+            "rssi": -255,
+            "mac": "aa555a00004a05ef",
+            "snr": -6.5
+        }
+    ]
+}
+
+/* 4 */
+{
+    "_id": ObjectId("58a2e1ee1bbe3922acd6dedf"),
+    "Timestamp": "14-02-2017 11:54:38",
+    "Duplicato": false,
+    "Frequency": 867.5,
+    "Spreading_Factor": 12,
+    "Dev_EUI": "0018b20000000c26",
+    "RSSI": -92,
+    "Data": "8e1800001048",
+    "Channel": 5
+}
+
+/* 5 */
+{
+    "_id": ObjectId("58a2e1ee1bbe3922acd6dee0"),
+    "Dev_EUI": "0018b20000000c26",
+    "Timestamp": "14-02-2017 11:54:38",
+    "GW": [
+        {
+            "rssi": -92,
+            "mac": "001bc50670200001",
+            "snr": 7.5
+        },
+        {
+            "rssi": -117,
+            "mac": "aa555a00004a05ef",
+            "snr": -4.7
+        },
+        {
+            "rssi": -121,
+            "mac": "001bc50670200049",
+            "snr": -14.2
+        }
+    ]
+}
+
+/* 6 */
+{
+    "_id": ObjectId("58a2e1f51bbe3922acd6dee1"),
+    "sens_accx": "0",
+    "sens_accy": "87.6",
+    "sens_accz": "0",
+    "Timestamp": "14-02-2017 11:54:45",
+    "sens_vbattery": "0.07",
+    "Duplicato": false,
+    "sens_longitude": 10.21535,
+    "Frequency": 867.9,
+    "sens_latitude": 45.51979,
+    "Spreading_Factor": 7,
+    "Dev_EUI": "001bc50670101631",
+    "RSSI": -88,
+    "Channel": 7
+}
+
+/* 7 */
+{
+    "_id": ObjectId("58a2e1f51bbe3922acd6dee2"),
+    "Dev_EUI": "001bc50670101631",
+    "Timestamp": "14-02-2017 11:54:45",
+    "GW": [
+        {
+            "rssi": -88,
+            "mac": "001bc50670200001",
+            "snr": 9.7
+        },
+        {
+            "rssi": -120,
+            "mac": "aa555a00004a05ef",
+            "snr": -3
+        }
+    ]
+}
+
+/* 8 */
+{
+    "_id": ObjectId("58a2e2bd1bbe392498ad57e8"),
+    "Dev_EUI": "0018b20000000c26",
+    "Timestamp": "14-02-2017 11:58:05"
+}
+
+/* 9 */
+{
+    "_id": ObjectId("58a2e2c71bbe392498ad57e9"),
+    "Timestamp": "14-02-2017 11:58:15",
+    "Duplicato": false,
+    "Frequency": 867.3,
+    "Spreading_Factor": 12,
+    "Dev_EUI": "0018b20000000c26",
+    "RSSI": -95,
+    "Data": "8e1900001048",
+    "Channel": 4
+}
+
+/* 10 */
+{
+    "_id": ObjectId("58a2fbf91bbe3925d4bd7af0"),
+    "sens_accx": "0",
+    "sens_accy": "127.8",
+    "sens_accz": "0",
+    "Timestamp": "14-02-2017 13:45:45",
+    "sens_vbattery": "654.37",
+    "Duplicato": false,
+    "sens_longitude": 10.21523,
+    "sens_time": "1487076344000",
+    "Frequency": 867.7,
+    "sens_latitude": 45.51969,
+    "Spreading_Factor": 7,
+    "Dev_EUI": "001bc50670101631",
+    "RSSI": -85,
+    "Channel": 6
+}
+
+/* 11 */
+{
+    "_id": ObjectId("58a2fe151bbe3914141bcfcf"),
+    "sens_accx": "0",
+    "sens_accy": "88.9",
+    "sens_accz": "0",
+    "Timestamp": "14-02-2017 13:54:45",
+    "sens_vbattery": "654.36",
+    "Duplicato": false,
+    "sens_longitude": 10.21526,
+    "sens_time": "1487076884000",
+    "Frequency": 867.5,
+    "sens_latitude": 45.51963,
+    "Spreading_Factor": 7,
+    "Dev_EUI": "001bc50670101631",
+    "RSSI": -88,
+    "Channel": 5
+}
+
+/* 12 */
+{
+    "_id": ObjectId("58a2fec91bbe390888bfe2a2"),
+    "sens_accx": "0",
+    "sens_accy": "129.5",
+    "sens_accz": "0",
+    "sens_temperature": "0.01",
+    "Timestamp": "14-02-2017 13:57:45",
+    "sens_vbattery": "654.36",
+    "Duplicato": false,
+    "sens_longitude": 10.21524,
+    "Frequency": 867.5,
+    "sens_latitude": 45.51965,
+    "Spreading_Factor": 7,
+    "Dev_EUI": "001bc50670101631",
+    "RSSI": -89,
+    "Channel": 5
+}
+
+/* 13 */
+{
+    "_id": ObjectId("58a307ed1bbe3922c851b1d7"),
+    "sens_accx": "-1.01",
+    "sens_accy": "0.02",
+    "sens_accz": "-0.08",
+    "sens_temperature": "-2.56",
+    "sens_altitude": 132.8,
+    "Timestamp": "14-02-2017 14:36:45",
+    "sens_vbattery": "3.88",
+    "Duplicato": false,
+    "sens_longitude": 10.21526,
+    "Frequency": 867.5,
+    "sens_latitude": 45.51939,
+    "Spreading_Factor": 7,
+    "Dev_EUI": "001bc50670101631",
+    "RSSI": -83,
+    "sens_speed": "0.02",
+    "Channel": 5
+}
+
+/* 14 */
+{
+    "_id": ObjectId("58a308a01bbe3922c851b1d8"),
+    "sens_accx": "-1.02",
+    "sens_accy": "0.03",
+    "sens_accz": "-0.09",
+    "sens_temperature": "-2.56",
+    "sens_altitude": 133.5,
+    "Timestamp": "14-02-2017 14:39:44",
+    "sens_vbattery": "3.91",
+    "Duplicato": false,
+    "sens_longitude": 10.21527,
+    "Frequency": 867.9,
+    "sens_latitude": 45.51959,
+    "Spreading_Factor": 7,
+    "Dev_EUI": "001bc50670101631",
+    "RSSI": -84,
+    "sens_speed": "0.01",
+    "Channel": 7
+}
+
+/* 15 */
+{
+    "_id": ObjectId("58a309541bbe3922c851b1d9"),
+    "sens_accx": "-1.01",
+    "sens_accy": "0.03",
+    "sens_accz": "-0.08",
+    "sens_temperature": "-2.56",
+    "sens_altitude": 152.6,
+    "Timestamp": "14-02-2017 14:42:44",
+    "sens_vbattery": "3.87",
+    "Duplicato": false,
+    "sens_longitude": 10.21518,
+    "Frequency": 867.9,
+    "sens_latitude": 45.51966,
+    "Spreading_Factor": 7,
+    "Dev_EUI": "001bc50670101631",
+    "RSSI": -88,
+    "sens_speed": "0.06",
+    "Channel": 7
+}
+
+/* 16 */
+{
+    "_id": ObjectId("58a30a081bbe3922c851b1da"),
+    "sens_accx": "-0.99",
+    "sens_accy": "0.01",
+    "sens_accz": "-0.09",
+    "sens_temperature": "-3.2",
+    "sens_altitude": 131.0,
+    "Timestamp": "14-02-2017 14:45:44",
+    "sens_vbattery": "3.91",
+    "Duplicato": false,
+    "sens_longitude": 10.21516,
+    "Frequency": 868.5,
+    "sens_latitude": 45.51977,
+    "Spreading_Factor": 7,
+    "Dev_EUI": "001bc50670101631",
+    "RSSI": -89,
+    "sens_speed": "0.05",
+    "Channel": 2
+}
+
+/* 17 */
+{
+    "_id": ObjectId("58a30abd1bbe3922c851b1db"),
+    "sens_accx": "-1",
+    "sens_accy": "0.02",
+    "sens_accz": "-0.1",
+    "sens_temperature": "-2.56",
+    "sens_altitude": 128.3,
+    "Timestamp": "14-02-2017 14:48:45",
+    "sens_vbattery": "3.91",
+    "Duplicato": false,
+    "sens_longitude": 10.2153,
+    "Frequency": 867.5,
+    "sens_latitude": 45.5196,
+    "Spreading_Factor": 7,
+    "Dev_EUI": "001bc50670101631",
+    "RSSI": -87,
+    "sens_speed": "0.02",
+    "Channel": 5
+}
+
+/* 18 */
+{
+    "_id": ObjectId("58a31d051bbe3928702ba265"),
+    "sens_accx": "0.35",
+    "sens_accy": "0.55",
+    "sens_accz": "0.05",
+    "sens_temperature": "20.48",
+    "sens_altitude": 126.8,
+    "Timestamp": "14-02-2017 16:06:45",
+    "sens_vbattery": "3.89",
+    "Duplicato": false,
+    "sens_longitude": 10.21531,
+    "Frequency": 868.5,
+    "sens_latitude": 45.5197,
+    "Spreading_Factor": 7,
+    "Dev_EUI": "001bc50670101631",
+    "RSSI": -96,
+    "sens_speed": "0.74",
+    "Channel": 2
+}
+
+/* 19 */
+{
+    "_id": ObjectId("58a31db81bbe3928702ba266"),
+    "sens_accx": "0.02",
+    "sens_accy": "0.99",
+    "sens_accz": "-0.02",
+    "sens_temperature": "41.6",
+    "sens_altitude": 126.8,
+    "Timestamp": "14-02-2017 16:09:44",
+    "sens_vbattery": "3.75",
+    "Duplicato": false,
+    "sens_longitude": 10.21531,
+    "Frequency": 868.1,
+    "sens_latitude": 45.5197,
+    "Spreading_Factor": 7,
+    "Dev_EUI": "001bc50670101631",
+    "RSSI": -91,
+    "sens_speed": "0.74",
+    "Channel": 0
+}
+
+/* 20 */
+{
+    "_id": ObjectId("58a31e6c1bbe3928702ba267"),
+    "sens_accx": "0",
+    "sens_accy": "0.02",
+    "sens_accz": "0.98",
+    "sens_temperature": "48",
+    "sens_altitude": 126.8,
+    "Timestamp": "14-02-2017 16:12:44",
+    "sens_vbattery": "3.76",
+    "Duplicato": false,
+    "sens_longitude": 10.21531,
+    "Frequency": 868.3,
+    "sens_latitude": 45.5197,
+    "Spreading_Factor": 7,
+    "Dev_EUI": "001bc50670101631",
+    "RSSI": -112,
+    "sens_speed": "0.74",
+    "Channel": 1
+}
+
+/* 21 */
+{
+    "_id": ObjectId("58a31f201bbe3928702ba268"),
+    "sens_accx": "0",
+    "sens_accy": "0.01",
+    "sens_accz": "0.96",
+    "sens_temperature": "53.12",
+    "sens_altitude": 126.8,
+    "Timestamp": "14-02-2017 16:15:44",
+    "sens_vbattery": "3.96",
+    "Duplicato": false,
+    "sens_longitude": 10.21531,
+    "Frequency": 868.3,
+    "sens_latitude": 45.5197,
+    "Spreading_Factor": 7,
+    "Dev_EUI": "001bc50670101631",
+    "RSSI": -119,
+    "sens_speed": "0.74",
+    "Channel": 1
+}
+
+/* 22 */
+{
+    "_id": ObjectId("58a31fd41bbe3928702ba269"),
+    "sens_accx": "0",
+    "sens_accy": "0.01",
+    "sens_accz": "0.96",
+    "sens_temperature": "56.32",
+    "sens_altitude": 126.8,
+    "Timestamp": "14-02-2017 16:18:44",
+    "sens_vbattery": "4.02",
+    "Duplicato": false,
+    "sens_longitude": 10.21531,
+    "Frequency": 867.3,
+    "sens_latitude": 45.5197,
+    "Spreading_Factor": 7,
+    "Dev_EUI": "001bc50670101631",
+    "RSSI": -119,
+    "sens_speed": "0.74",
+    "Channel": 4
+}
+
+/* 23 */
+{
+    "_id": ObjectId("58a320611bbe3928702ba26a"),
+    "Dev_EUI": "001bc50670101631",
+    "Timestamp": "14-02-2017 16:21:05"
+}
+
+/* 24 */
+{
+    "_id": ObjectId("58a3211f1bbe3928702ba26b"),
+    "sens_accx": "-0.12",
+    "sens_accy": "0.1",
+    "sens_accz": "0.96",
+    "sens_temperature": "59.52",
+    "sens_altitude": 0.0,
+    "Timestamp": "14-02-2017 16:24:15",
+    "sens_vbattery": "4.01",
+    "Duplicato": false,
+    "sens_longitude": 0.0,
+    "Frequency": 867.1,
+    "sens_latitude": 0.0,
+    "Spreading_Factor": 12,
+    "Dev_EUI": "001bc50670101631",
+    "RSSI": -104,
+    "sens_speed": "0",
+    "Channel": 3
+}
+
+/* 25 */
+{
+    "_id": ObjectId("58a321d31bbe3928702ba26c"),
+    "sens_accx": "-0.14",
+    "sens_accy": "0.1",
+    "sens_accz": "0.95",
+    "sens_temperature": "63.36",
+    "sens_altitude": 0.0,
+    "Timestamp": "14-02-2017 16:27:15",
+    "sens_vbattery": "4.03",
+    "Duplicato": false,
+    "sens_longitude": 0.0,
+    "Frequency": 867.1,
+    "sens_latitude": 0.0,
+    "Spreading_Factor": 12,
+    "Dev_EUI": "001bc50670101631",
+    "RSSI": -107,
+    "sens_speed": "0",
+    "Channel": 3
+}
+
+/* 26 */
+{
+    "_id": ObjectId("58a322871bbe3928702ba26d"),
+    "sens_accx": "-0.14",
+    "sens_accy": "0.1",
+    "sens_accz": "0.95",
+    "sens_temperature": "64",
+    "sens_altitude": 0.0,
+    "Timestamp": "14-02-2017 16:30:15",
+    "sens_vbattery": "4.08",
+    "Duplicato": false,
+    "sens_longitude": 0.0,
+    "Frequency": 868.1,
+    "sens_latitude": 0.0,
+    "Spreading_Factor": 12,
+    "Dev_EUI": "001bc50670101631",
+    "RSSI": -99,
+    "sens_speed": "0",
+    "Channel": 0
+}
+
+/* 27 */
+{
+    "_id": ObjectId("58a3233b1bbe3928702ba26e"),
+    "sens_accx": "-0.13",
+    "sens_accy": "0.1",
+    "sens_accz": "0.96",
+    "sens_temperature": "65.92",
+    "sens_altitude": 0.0,
+    "Timestamp": "14-02-2017 16:33:15",
+    "sens_vbattery": "4.1",
+    "Duplicato": false,
+    "sens_longitude": 0.0,
+    "Frequency": 867.1,
+    "sens_latitude": 0.0,
+    "Spreading_Factor": 12,
+    "Dev_EUI": "001bc50670101631",
+    "RSSI": -104,
+    "sens_speed": "0",
+    "Channel": 3
+}
+
+/* 28 */
+{
+    "_id": ObjectId("58a323ef1bbe3928702ba26f"),
+    "sens_accx": "-0.14",
+    "sens_accy": "0.1",
+    "sens_accz": "0.96",
+    "sens_temperature": "66.56",
+    "sens_altitude": 0.0,
+    "Timestamp": "14-02-2017 16:36:15",
+    "sens_vbattery": "4.13",
+    "Duplicato": false,
+    "sens_longitude": 0.0,
+    "Frequency": 868.1,
+    "sens_latitude": 0.0,
+    "Spreading_Factor": 12,
+    "Dev_EUI": "001bc50670101631",
+    "RSSI": -100,
+    "sens_speed": "0",
+    "Channel": 0
+}
+
+/* 29 */
+{
+    "_id": ObjectId("58a324a21bbe3928702ba270"),
+    "sens_accx": "-0.13",
+    "sens_accy": "0.09",
+    "sens_accz": "0.95",
+    "sens_temperature": "67.2",
+    "sens_altitude": 0.0,
+    "Timestamp": "14-02-2017 16:39:14",
+    "sens_vbattery": "3.94",
+    "Duplicato": false,
+    "sens_longitude": 0.0,
+    "Frequency": 867.1,
+    "sens_latitude": 0.0,
+    "Spreading_Factor": 12,
+    "Dev_EUI": "001bc50670101631",
+    "RSSI": -114,
+    "sens_speed": "0",
+    "Channel": 3
+}
+
+/* 30 */
+{
+    "_id": ObjectId("58a325541bbe3928702ba271"),
+    "sens_accx": "-0.13",
+    "sens_accy": "0.1",
+    "sens_accz": "0.95",
+    "sens_temperature": "66.56",
+    "sens_altitude": 0.0,
+    "Timestamp": "14-02-2017 16:42:12",
+    "sens_vbattery": "4.13",
+    "Duplicato": false,
+    "sens_longitude": 0.0,
+    "Frequency": 868.5,
+    "sens_latitude": 0.0,
+    "Spreading_Factor": 7,
+    "Dev_EUI": "001bc50670101631",
+    "RSSI": -101,
+    "sens_speed": "0",
+    "Channel": 2
+}
+
+/* 31 */
+{
+    "_id": ObjectId("58a326081bbe3928702ba272"),
+    "sens_accx": "-0.13",
+    "sens_accy": "0.09",
+    "sens_accz": "0.96",
+    "sens_temperature": "65.28",
+    "sens_altitude": 0.0,
+    "Timestamp": "14-02-2017 16:45:12",
+    "sens_vbattery": "3.98",
+    "Duplicato": false,
+    "sens_longitude": 0.0,
+    "Frequency": 867.1,
+    "sens_latitude": 0.0,
+    "Spreading_Factor": 7,
+    "Dev_EUI": "001bc50670101631",
+    "RSSI": -108,
+    "sens_speed": "0",
+    "Channel": 3
+}
+
+/* 32 */
+{
+    "_id": ObjectId("58a459ce0b85524ee84eb0b6"),
+    "sens_accx": "-0.98",
+    "sens_accy": "0.04",
+    "sens_accz": "-0.05",
+    "sens_temperature": "21.12",
+    "sens_altitude": 119.4,
+    "Timestamp": "15-02-2017 14:38:22",
+    "sens_vbattery": "4.05",
+    "Duplicato": false,
+    "sens_longitude": 9.22225,
+    "Frequency": 867.9,
+    "sens_latitude": 45.44812,
+    "Spreading_Factor": 11,
+    "Dev_EUI": "001bc5067010162d",
+    "RSSI": -120,
+    "sens_speed": "0.19",
+    "Channel": 7
+}
+
+/* 33 */
+{
+    "_id": ObjectId("58a45a820b85524ee84eb0b7"),
+    "sens_accx": "-0.98",
+    "sens_accy": "0.01",
+    "sens_accz": "-0.05",
+    "sens_temperature": "21.12",
+    "sens_altitude": 94.5,
+    "Timestamp": "15-02-2017 14:41:22",
+    "sens_vbattery": "3.88",
+    "Duplicato": false,
+    "sens_longitude": 9.22213,
+    "Frequency": 868.1,
+    "sens_latitude": 45.4481,
+    "Spreading_Factor": 11,
+    "Dev_EUI": "001bc5067010162d",
+    "RSSI": -119,
+    "sens_speed": "0.62",
+    "Channel": 0
+}
+
+/* 34 */
+{
+    "_id": ObjectId("58a45b380b85524ee84eb0b8"),
+    "sens_accx": "-0.98",
+    "sens_accy": "0.01",
+    "sens_accz": "-0.05",
+    "sens_temperature": "22.4",
+    "sens_altitude": 118.5,
+    "Timestamp": "15-02-2017 14:44:24",
+    "sens_vbattery": "4.05",
+    "Duplicato": false,
+    "sens_longitude": 9.22225,
+    "Frequency": 867.7,
+    "sens_latitude": 45.44801,
+    "Spreading_Factor": 12,
+    "Dev_EUI": "001bc5067010162d",
+    "RSSI": -119,
+    "sens_speed": "0.33",
+    "Channel": 6
+}
+
+/* 35 */
+{
+    "_id": ObjectId("58a45bea0b85524ee84eb0b9"),
+    "sens_accx": "-0.98",
+    "sens_accy": "0.02",
+    "sens_accz": "-0.06",
+    "sens_temperature": "20.48",
+    "sens_altitude": 128.4,
+    "Timestamp": "15-02-2017 14:47:22",
+    "sens_vbattery": "4.04",
+    "Duplicato": false,
+    "sens_longitude": 9.22222,
+    "Frequency": 868.1,
+    "sens_latitude": 45.4482,
+    "Spreading_Factor": 11,
+    "Dev_EUI": "001bc5067010162d",
+    "RSSI": -119,
+    "sens_speed": "0.04",
+    "Channel": 0
+}
+
+/* 36 */
+{
+    "_id": ObjectId("58a45ceb0b85524ee84eb0ba"),
+    "Dev_EUI": "001bc5067010163e",
+    "Timestamp": "15-02-2017 14:51:39"
+}
+
+/* 37 */
+{
+    "_id": ObjectId("58a45d480b85524ee84eb0bb"),
+    "Dev_EUI": "001bc5067010164f",
+    "Timestamp": "15-02-2017 14:53:12"
+}
+
+/* 38 */
+{
+    "_id": ObjectId("58a45d510b85524ee84eb0bc"),
+    "Dev_EUI": "001bc5067010164f",
+    "Timestamp": "15-02-2017 14:53:21"
+}
+
+/* 39 */
+{
+    "_id": ObjectId("58a45d520b85524ee84eb0bd"),
+    "sens_accx": "0.32",
+    "sens_accy": "0.97",
+    "sens_accz": "0.12",
+    "sens_temperature": "21.12",
+    "sens_altitude": 111.7,
+    "Timestamp": "15-02-2017 14:53:22",
+    "sens_vbattery": "4.04",
+    "Duplicato": false,
+    "sens_longitude": 9.22229,
+    "Frequency": 868.1,
+    "sens_latitude": 45.44805,
+    "Spreading_Factor": 11,
+    "Dev_EUI": "001bc5067010162d",
+    "RSSI": -109,
+    "sens_speed": "0.36",
+    "Channel": 0
+}
+
+/* 40 */
+{
+    "_id": ObjectId("58a45d5c0b85524ee84eb0be"),
+    "Dev_EUI": "001bc5067010164f",
+    "Timestamp": "15-02-2017 14:53:32"
+}
+
+/* 41 */
+{
+    "_id": ObjectId("58a45d690b85524ee84eb0bf"),
+    "Dev_EUI": "001bc5067010164f",
+    "Timestamp": "15-02-2017 14:53:45"
+}
+
+/* 42 */
+{
+    "_id": ObjectId("58a45d710b85524ee84eb0c0"),
+    "Dev_EUI": "001bc5067010164f",
+    "Timestamp": "15-02-2017 14:53:53"
+}
+
+/* 43 */
+{
+    "_id": ObjectId("58a45d8b0b85524ee84eb0c1"),
+    "Dev_EUI": "001bc5067010164f",
+    "Timestamp": "15-02-2017 14:54:19"
+}
+
+/* 44 */
+{
+    "_id": ObjectId("58a45da00b85524ee84eb0c2"),
+    "Dev_EUI": "001bc5067010164f",
+    "Timestamp": "15-02-2017 14:54:40"
+}
+
+/* 45 */
+{
+    "_id": ObjectId("58a45da30b85524ee84eb0c3"),
+    "Dev_EUI": "001bc5067010162d",
+    "Timestamp": "15-02-2017 14:54:43"
+}
+
+/* 46 */
+{
+    "_id": ObjectId("58a45dad0b85524ee84eb0c4"),
+    "Dev_EUI": "001bc5067010162d",
+    "Timestamp": "15-02-2017 14:54:53"
+}
+
+/* 47 */
+{
+    "_id": ObjectId("58a45e5e0b85524ee84eb0c5"),
+    "sens_accx": "-0.02",
+    "sens_accy": "0",
+    "sens_accz": "1",
+    "sens_temperature": "10.24",
+    "sens_altitude": 0.0,
+    "Timestamp": "15-02-2017 14:57:50",
+    "sens_vbattery": "4.16",
+    "Duplicato": false,
+    "sens_longitude": 0.0,
+    "Frequency": 867.5,
+    "sens_latitude": 0.0,
+    "Spreading_Factor": 12,
+    "Dev_EUI": "001bc5067010164f",
+    "RSSI": -107,
+    "sens_speed": "0",
+    "Channel": 5
+}
+
+/* 48 */
+{
+    "_id": ObjectId("58a45f110b85524ee84eb0c6"),
+    "sens_accx": "-0.01",
+    "sens_accy": "0.02",
+    "sens_accz": "0.99",
+    "sens_temperature": "12.8",
+    "sens_altitude": 100.9,
+    "Timestamp": "15-02-2017 15:00:49",
+    "sens_vbattery": "4.11",
+    "Duplicato": false,
+    "sens_longitude": 9.22214,
+    "Frequency": 867.7,
+    "sens_latitude": 45.448,
+    "Spreading_Factor": 12,
+    "Dev_EUI": "001bc5067010164f",
+    "RSSI": -118,
+    "sens_speed": "0.05",
+    "Channel": 6
+}
+
+/* 49 */
+{
+    "_id": ObjectId("58a45fc50b85524ee84eb0c7"),
+    "sens_accx": "-0.02",
+    "sens_accy": "0.02",
+    "sens_accz": "1",
+    "sens_temperature": "12.8",
+    "sens_altitude": 116.7,
+    "Timestamp": "15-02-2017 15:03:49",
+    "sens_vbattery": "4.11",
+    "Duplicato": false,
+    "sens_longitude": 9.22221,
+    "Frequency": 867.7,
+    "sens_latitude": 45.44816,
+    "Spreading_Factor": 12,
+    "Dev_EUI": "001bc5067010164f",
+    "RSSI": -120,
+    "sens_speed": "0.12",
+    "Channel": 6
+}
+
+/* 50 */
+{
+    "_id": ObjectId("58a460790b85524ee84eb0c8"),
+    "sens_accx": "-0.02",
+    "sens_accy": "0.02",
+    "sens_accz": "1",
+    "sens_temperature": "15.36",
+    "sens_altitude": 117.7,
+    "Timestamp": "15-02-2017 15:06:49",
+    "sens_vbattery": "4.11",
+    "Duplicato": false,
+    "sens_longitude": 9.22226,
+    "Frequency": 867.3,
+    "sens_latitude": 45.44799,
+    "Spreading_Factor": 12,
+    "Dev_EUI": "001bc5067010164f",
+    "RSSI": -107,
+    "sens_speed": "0.08",
+    "Channel": 4
+}
