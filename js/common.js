@@ -1,4 +1,4 @@
-var wsUri = "ws://echo.websocket.org/";
+var wsUri = "ws://192.168.2.67:3000/cable/";
 var output;
 
 function init()
@@ -19,7 +19,16 @@ function testWebSocket()
 function onOpen(evt)
 {
     writeToScreen("CONNECTED");
-    doSend("WebSocket rocks");
+
+    var payload = {
+        command: "subscribe",
+    identifier: JSON.stringify({ channel: "MessageChannel" })
+    };
+
+    var subscribe_command = JSON.stringify(payload);
+    websocket.send(subscribe_command);
+    
+    //doSend("WebSocket rocks");
 }
 
 function onClose(evt)
