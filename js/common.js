@@ -3,8 +3,8 @@ var output;
 
 function init()
 {
-    output = document.getElementById("output");
-    testWebSocket();
+    //output = document.getElementById("output");
+    //testWebSocket();
 }
 
 function testWebSocket()
@@ -18,7 +18,7 @@ function testWebSocket()
 
 function onOpen(evt)
 {
-    writeToScreen("CONNECTED");
+    //writeToScreen("CONNECTED");
 
     var payload = {
         command: "subscribe",
@@ -33,12 +33,12 @@ function onOpen(evt)
 
 function onClose(evt)
 {
-    writeToScreen("DISCONNECTED");
+    //writeToScreen("DISCONNECTED");
 }
 
 function onMessage(evt)
 {
-    writeToScreen('<span style="color: blue;">RESPONSE: ' + evt.data+'</span>');
+    //writeToScreen('<span style="color: blue;">RESPONSE: ' + evt.data+'</span>');
     //websocket.close();
 }
 
@@ -60,5 +60,3 @@ function writeToScreen(message)
     pre.innerHTML = message;
     output.appendChild(pre);
 }
-
-window.addEventListener("load", init, false);

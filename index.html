@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="cityai" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -7,11 +7,41 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="css/style.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/916290b76b.js"></script>
 </head>
-<body>
+<body ng-controller="cityaiController">
 
-<h1>LoRa MAPS!</h1>
-<div id="output"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div map></div>
+    </div>
+
+    <div class="row ctrlpnl">
+        <div class="col-md-12 buttons">
+            <div class="switch">
+                <span class="fa-stack fa-lg" ng-click="datum = 'temp'" ng-style="{'opacity':datum=='temp' ? 1 : 0.3}">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-thermometer-full fa-stack-1x"></i>
+                </span>
+                <span class="fa-stack fa-lg" ng-click="datum = 'rssi'" ng-style="{'opacity':datum=='rssi' ? 1 : 0.3}">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-signal fa-stack-1x"></i>
+                </span>
+                <span class="fa-stack fa-lg" ng-click="datum = 'hum'" ng-style="{'opacity':datum=='hum' ? 1 : 0.3}">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-tint fa-stack-1x" ></i>
+                </span>
+            </div>
+        </div>
+        <!--
+        <div class="col-md-6 timeline">
+
+        </div>
+
+        -->
+    </div>
+</div>
+
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
@@ -22,9 +52,12 @@
 <script src="bower_components/gimite/web-socket-js/web_socket.js"></script>
 <script src="bower_components/angular/angular.min.js"></script>
 <script src='js/common.js'></script>
+<script src='js/controller.js'></script>
+<script src='js/services.js'></script>
+<script src="js/directives.js"></script>
     
     <script src='//d3js.org/d3.v3.min.js' charset='utf-8'></script>
-    <div id='map'></div>
-    <script src='js/tests.js'></script>
+  <!--  <script src='js/tests.js'></script>-->
+    <script src='js/tests_dani.js'></script>
 </body>
 </html>
