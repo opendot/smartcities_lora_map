@@ -13,9 +13,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-12" id="map">
-
-        </div>
+        <div map></div>
     </div>
 
     <div class="row ctrlpnl">
@@ -29,7 +27,7 @@
                     <i class="fa fa-circle fa-stack-2x"></i>
                     <i class="fa fa-signal fa-stack-1x"></i>
                 </span>
-                <span class="fa-stack fa-lg" ng-click="datum = 'humidity'" ng-style="{'opacity':datum=='humidity' ? 1 : 0.3}">
+                <span class="fa-stack fa-lg" ng-click="datum = 'hum'" ng-style="{'opacity':datum=='hum' ? 1 : 0.3}">
                     <i class="fa fa-circle fa-stack-2x"></i>
                     <i class="fa fa-tint fa-stack-1x" ></i>
                 </span>
@@ -56,8 +54,10 @@
 <script src='js/common.js'></script>
 <script src='js/controller.js'></script>
 <script src='js/services.js'></script>
+<script src="js/directives.js"></script>
     
     <script src='//d3js.org/d3.v3.min.js' charset='utf-8'></script>
-    <script src='js/tests.js'></script>
+  <!--  <script src='js/tests.js'></script>-->
+    <script src='js/tests_dani.js'></script>
 </body>
 </html>

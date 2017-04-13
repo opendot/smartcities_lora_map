@@ -13,7 +13,7 @@ app.controller('cityaiController', function cityaiController($scope) {
     //choose what value to plot
     $scope.datum = "temp";
 
-    //update viz on 
+    //update viz on
     $scope.$watch("datum",function(newVal, oldVal) {
         if(newVal != oldVal) {
             $scope.updateViz();
@@ -22,7 +22,7 @@ app.controller('cityaiController', function cityaiController($scope) {
 
     //update viz here
     $scope.updateViz = function() {
-
+        $scope.$broadcast("update", {data:$scope.datapoints, ref:$scope.datum});
     }
 
 
@@ -34,7 +34,7 @@ app.controller('cityaiController', function cityaiController($scope) {
     websocket.onmessage = function(evt) { onMessage(evt) };
     websocket.onerror = function(evt) { onError(evt) };
 
-
+var ok = true;
     function onOpen(evt)
     {
         //subscribe to channel
@@ -55,9 +55,28 @@ app.controller('cityaiController', function cityaiController($scope) {
 
     function onMessage(evt)
     {
-        console.log(evt);
-        //parse data and update viz
-        //$scope.updateViz()
+        //console.log(evt);
+        var msg = JSON.parse(evt.data);
+
+        if("identifier" in msg && msg.type!="confirm_subscription") {
+            obj = _.find($scope.datapoints,function(d){return d.properties.id == msg.message.properties.id});
+            if(obj && obj !== null) {
+                obj.properties = msg.message.properties;
+                obj.geometry = msg.message.geometry;
+            }
+            else{
+                $scope.datapoints.push(msg.message);
+            }
+        }
+        if(ok && $scope.datapoints.length>80) {
+            $scope.datapoints.forEach(function (d, i) {
+                console.log(d.lat, d.lon);
+            })
+            ok = false;
+        }
+
+        //update viz
+        $scope.updateViz()
     }
 
     function onError(evt)
