@@ -12,6 +12,7 @@
 */
 mapboxgl.accessToken = 'pk.eyJ1IjoiZ3VhcHBvbWFzdHJvIiwiYSI6ImNpcm1veml2dzAwNGZpMmt3MnBtZzA4MmYifQ.dJ4HXjGq69e9FRyafBLtMg';
 // 'pk.eyJ1IjoiZ3VhcHBvbWFzdHJvIiwiYSI6ImNpcm1veml2dzAwNGZpMmt3MnBtZzA4MmYifQ.dJ4HXjGq69e9FRyafBLtMg';
+mapboxgl.accessToken = 'pk.eyJ1IjoibGF1cmVraXJkdXIiLCJhIjoiY2oxZTJ5ZmVnMDAwNTMyanUzNHVleml3NSJ9.8xHBdXvjntJQkpiLLVEqVw';
 
 function pointOnCircle(angle, lon, lat) {
     coordinates = [
@@ -27,6 +28,29 @@ function interpolate(p1, p2, factor) {
     var lon = p1[0] + factor * (p2[0] - p1[0]);
     var lat = p1[1] + factor * (p2[1] - p1[1]);
     return [lon, lat];
+}
+
+var incomingFeatures = [];
+var updateNow = !false;
+
+
+function updateExtrusionFeatures(map, incoming) {
+
+    // incoming:
+    //   geometry.coordinates[y,x]
+    //   properties.temp;
+
+    var a = [];
+    incoming.forEach(function (f) {
+        var v = f.geometry.coordinates;
+        v.info_old = v.info ? v.info : 0;
+        v.info = f.properties.temp;
+        a.push(v)
+    });
+
+    var layer = extrude(map, a);
+
+    return layer.features;
 }
 
 function init(map) {
@@ -119,7 +143,7 @@ function init(map) {
             }
         ]
         };
-       // 
+        // 
         runAnimation(map, data, extrusionLayer);
     });
 
@@ -137,7 +161,7 @@ function init(map) {
         var coordinates = data.features[0].geometry.coordinates;
 
         // start by showing just the first coordinate
-        data.features[0].geometry.coordinates = [coordinates[0]];
+        // data.features[0].geometry.coordinates = [coordinates[0]];
 
         map.addSource('trace', {
             type: 'geojson',
@@ -157,14 +181,14 @@ function init(map) {
         // setup the viewport
         map.jumpTo({
             'center': coordinates[0],
-            'zoom': 15
+            'zoom': 13
         });
         //    map.setPitch(30);
 
         var savedFeatures = [].concat(extrusion.features);
 
         extrusionLayer.source.data = extrusion;
-        console.log(extrusion)
+        // console.log(extrusion)
 
         map.addLayer(extrusionLayer);
 
@@ -173,39 +197,62 @@ function init(map) {
 
         function step(timestamp) {
 
+
             if (!start) start = timestamp;
             var progress = (timestamp - start) / 1000;
+
             var i = Math.round(progress);
             var factor = progress - i;
-            // console.log(timestamp, i, current);
-            if (i < coordinates.length) {
-                if (i > current) {
-                    var p = savedFeatures[i].properties;
-                    p.initialHeight = p.targetHeight === undefined ?
-                        20 + 200 * Math.random(200) :
-                        p.targetHeight;
-                    p.targetHeight = 20 + 200 * Math.random(200);
-                    current = i;
+            //console.log("progress", progress, "factor", factor, extrusion.features[0]);
+
+            //  if (i < coordinates.length) {
+            /*  if (i > current) {
+                      var p = savedFeatures[i].properties;
+                      p.initialHeight = p.targetHeight === undefined ?
+                          20 + 200 * Math.random(200) :
+                          p.targetHeight;
+                      p.targetHeight = 20 + 200 * Math.random(200);
+                      current = i;
+                  }
+                 )
+                    for (var n = 0; n < savedFeatures.length; n++) {
+                        var p = savedFeatures[n].properties;
+                        p.height = (1 - factor) * p.initialHeight + factor * p.targetHeight;
+                    }
+                    // extrusion.features = savedFeatures.slice(0, i + 1);
+                    // [savedFeatures[i]];
+*/
+
+            if (updateNow) {
+
+                updateNow = false;
+
+                if (incomingFeatures.length)
+                    extrusion.features = updateExtrusionFeatures(map, incomingFeatures);
+
+                for (var n = 0; n < extrusion.features.length; n++) {
+                    //  var p = extrusion.features[n].properties;
+                    //  p.height = 100 * Math.random() + 100;
                 }
-                for (var n = 0; n < savedFeatures.length; n++) {
-                    var p = savedFeatures[n].properties;
-                    p.height = (1 - factor) * p.initialHeight + factor * p.targetHeight;
-                }
-                extrusion.features = savedFeatures.slice(0, i + 1);
-                // [savedFeatures[i]];
 
                 map.getSource('room-extrusion').setData(extrusion)
-                data.features[0].geometry.coordinates.push(coordinates[i]);
+                    // data.features[0].geometry.coordinates.push(coordinates[i]);
+                console.log("ROBBA>" + incomingFeatures.length, new Date().toISOString());
+                data.features = incomingFeatures;
 
                 map.getSource('trace').setData(data);
+                map.getSource('point').setData(data);
+
                 // map.setPitch(30+i);
                 // map.setBearing(map.getBearing() + .5);
-                map.panTo(coordinates[i]);
+                // map.panTo(coordinates[i]);
                 //  i++;
+                //  }
             }
-            // if (progress < 2000) {
-            window.requestAnimationFrame(step);
-            // }
+
+            if (progress < 2000) {
+                window.requestAnimationFrame(step);
+            }
         }
 
         window.requestAnimationFrame(step);
@@ -221,7 +268,7 @@ function init(map) {
             }
 
         });
-        map.addLayer({
+        if (false) map.addLayer({
             "id": "point",
             "source": "point",
             "type": "circle",
@@ -243,7 +290,7 @@ function init(map) {
                 "features": features
             }
         });
-        map.addLayer({
+        if (false) map.addLayer({
             "id": "interpolated-point",
             "source": "interpolated-point",
             "type": "circle",
@@ -264,7 +311,9 @@ function init(map) {
             'type': 'fill-extrusion',
             'minzoom': 15,
             'paint': {
-                'fill-extrusion-color': '#aaa',
+                //'fill-extrusion-color': '#aaa',
+
+                'fill-extrusion-color': 'rgb(43,42,60)',
                 'fill-extrusion-height': {
                     'type': 'identity',
                     'property': 'height'
@@ -273,95 +322,97 @@ function init(map) {
                     'type': 'identity',
                     'property': 'min_height'
                 },
-                'fill-extrusion-opacity': .6
+                'fill-extrusion-opacity': .4
             }
         });
     }
-    var extrusion;
+}
 
-    function extrude(map, completeLineStringArray) {
-        var h = 0.0001;
-        var w = 0.00008;
+var extrusion;
 
-        var features = [];
+function extrude(map, completeLineStringArray) {
+    var k = .5;
+    var h = 0.001 * k;
+    var w = 0.0008 * k;
 
-        completeLineStringArray.forEach(function (s, i) {
-            const COLORS = ["orange", "#9999ff", "red"];
-            var color = COLORS[(i % 3)];
-            features.push({
-                "type": "Feature",
-                "properties": {
-                    "level": 1,
-                    "name": "Bird Exhibit",
-                    "height": 100 + 20 * i,
-                    "base_height": 0,
-                    "color": color
-                },
-                "geometry": {
-                    "coordinates": [[
+    var features = [];
+
+    completeLineStringArray.forEach(function (s, i) {
+        const COLORS = ["orange", "#9999ff", "red"];
+        var color = COLORS[(i % 3)];
+        features.push({
+            "type": "Feature",
+            "properties": {
+                "level": 1,
+                "name": "Bird Exhibit",
+                "height": 50 * s.info, // 100 + 20 * i,
+                "base_height": 0,
+                "color": "hsl(" + (95 + (s.info - 18) * 7) + ", 100%, 50%)"
+            },
+            "geometry": {
+                "coordinates": [[
                     [s[0] - h, s[1]],
                     [s[0], s[1] + w],
                     [s[0] + h, s[1]],
                     [s[0], s[1] - w],
                     [s[0] - h, s[1]]
                 ]],
-                    "type": "Polygon"
-                },
-                "id": "06e8fa0b3f851e3ae0e1da5fc17e111e"
-            })
-        })
-
-
-        extrusion = {
-            "type": "FeatureCollection",
-            "features": features
-        };
-        //  console.log("extrusion", extrusion);
-        var layer = {
-            'id': 'room-extrusion',
-            'type': 'fill-extrusion',
-            'source': {
-                // Geojson Data source used in vector tiles, documented at
-                // https://gist.github.com/ryanbaumann/a7d970386ce59d11c16278b90dde094d
-                'type': 'geojson'
-                    // , 'data': extrusion
+                "type": "Polygon"
             },
-            'paint': {
-                // See the Mapbox Style Spec for details on property functions
-                // https://www.mapbox.com/mapbox-gl-style-spec/#types-function
-                'fill-extrusion-color': {
-                    // Get the fill-extrusion-color from the source 'color' property.
-                    'property': 'color',
-                    'type': 'identity'
-                },
-                'fill-extrusion-height': {
-                    // Get fill-extrusion-height from the source 'height' property.
-                    'property': 'height',
-                    'type': 'identity'
-                },
-                'fill-extrusion-base': {
-                    // Get fill-extrusion-base from the source 'base_height' property.
-                    'property': 'base_height',
-                    'type': 'identity'
-                },
-                // Make extrusions slightly opaque for see through indoor walls.
-                'fill-extrusion-opacity': 0.5
-            }
-        }
-        return layer;
-    }
+            "id": "06e8fa0b3f851e3ae0e1da5fc17e111e"
+        })
+    })
 
-    function shortestPath() {
-        var url = "https://api.mapbox.com/matching/v5/mapbox/driving/" +
-            "-117.1728265285492,32.71204416018209;" +
-            "-117.17288821935652,32.712258556224;" +
-            "-117.17293113470076,32.712443613445814;" +
-            "-117.17292040586472,32.71256999376694;" +
-            "-117.17298477888109,32.712603845608285;" +
-            "-117.17314302921294,32.71259933203019;" + "-117.17334151268004,32.71254065549407" + "?access_token=" + "pk.eyJ1IjoiZ3VhcHBvbWFzdHJvIiwiYSI6ImNpcm1veml2dzAwNGZpMmt3MnBtZzA4MmYifQ.dJ4HXjGq69e9FRyafBLtMg";
-        d3.json(url, function (err, data) {
-            if (err) throw err;
-            // do something with (map, data);
-        });
+
+    extrusion = {
+        "type": "FeatureCollection",
+        "features": features
+    };
+    //  console.log("extrusion", extrusion);
+    var layer = {
+        'id': 'room-extrusion',
+        'type': 'fill-extrusion',
+        'source': {
+            // Geojson Data source used in vector tiles, documented at
+            // https://gist.github.com/ryanbaumann/a7d970386ce59d11c16278b90dde094d
+            'type': 'geojson'
+                // , 'data': extrusion
+        },
+        'paint': {
+            // See the Mapbox Style Spec for details on property functions
+            // https://www.mapbox.com/mapbox-gl-style-spec/#types-function
+            'fill-extrusion-color': {
+                // Get the fill-extrusion-color from the source 'color' property.
+                'property': 'color',
+                'type': 'identity'
+            },
+            'fill-extrusion-height': {
+                // Get fill-extrusion-height from the source 'height' property.
+                'property': 'height',
+                'type': 'identity'
+            },
+            'fill-extrusion-base': {
+                // Get fill-extrusion-base from the source 'base_height' property.
+                'property': 'base_height',
+                'type': 'identity'
+            },
+            // Make extrusions slightly opaque for see through indoor walls.
+            'fill-extrusion-opacity': 0.5
+        }
     }
+    return layer;
+}
+
+function shortestPath() {
+    var url = "https://api.mapbox.com/matching/v5/mapbox/driving/" +
+        "-117.1728265285492,32.71204416018209;" +
+        "-117.17288821935652,32.712258556224;" +
+        "-117.17293113470076,32.712443613445814;" +
+        "-117.17292040586472,32.71256999376694;" +
+        "-117.17298477888109,32.712603845608285;" +
+        "-117.17314302921294,32.71259933203019;" + "-117.17334151268004,32.71254065549407" + "?access_token=" + "pk.eyJ1IjoiZ3VhcHBvbWFzdHJvIiwiYSI6ImNpcm1veml2dzAwNGZpMmt3MnBtZzA4MmYifQ.dJ4HXjGq69e9FRyafBLtMg";
+    d3.json(url, function (err, data) {
+        if (err) throw err;
+        // do something with (map, data);
+    });
 }
